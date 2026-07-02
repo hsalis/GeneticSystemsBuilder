@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genetic-systems-builder"
+version = "1.0.0"
+description = "Golden Gate genetic systems builder and non-repetitive parts design tools."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Howard Salis" }
+]
+dependencies = [
+  "biopython",
+  "joblib",
+  "networkx",
+  "numba",
+  "numpy",
+  "openpyxl",
+  "pandas",
+  "requests",
+  "rocksdict",
+  "scipy",
+  "setuptools",
+  "ViennaRNA"
+]
+
+[project.scripts]
+gsb = "GeneticSystemsCalculator_Build:main"
+
+[tool.setuptools]
+py-modules = [
+  "GeneticSystemsCalculator_Build",
+  "GeneticSystemsCalculator_Build_Helpers",
+  "GeneticSystemsCalculator_ModelFunctions",
+  "PyVRNA",
+  "nrpcalc"
+]
+
+[tool.setuptools.packages.find]
+include = [
+  "NRP_Calculator",
+  "NRP_Calculator.*",
+  "data"
+]
+
+[tool.setuptools.package-data]
+"NRP_Calculator.base" = ["*.par"]
+"data" = ["*.csv", "*.csv.zip", "*.xlsx"]

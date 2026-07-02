@@ -10,11 +10,14 @@ from Bio.SeqUtils import MeltingTemp as mt
 from numba import njit, prange
 
 try:
-    sys.path.append('NRP_Calculator/')
     import NRP_Calculator.nrpcalc as nrpcalc
 except ImportError:
-    nrpcalc = None
-    raise ImportError("Could not import nrpcalc. The Non-Repetitive Parts Calculator is used to design PCR primers.")
+    sys.path.append(os.path.join(os.path.dirname(__file__), 'NRP_Calculator'))
+    try:
+        import NRP_Calculator.nrpcalc as nrpcalc
+    except ImportError:
+        nrpcalc = None
+        raise ImportError("Could not import nrpcalc. The Non-Repetitive Parts Calculator is used to design PCR primers.")
 
 try:
     from PyVRNA import PyVRNA

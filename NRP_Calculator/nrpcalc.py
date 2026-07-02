@@ -1,6 +1,13 @@
-from base import maker     as nrpmaker
-from base import finder    as nrpfinder
-from base import kmerSetDB
+try:
+    from .base import maker     as nrpmaker
+    from .base import finder    as nrpfinder
+    from .base import kmerSetDB
+except ImportError:
+    if __package__:
+        raise
+    from base import maker     as nrpmaker
+    from base import finder    as nrpfinder
+    from base import kmerSetDB
 
 __version__ = '1.5.10'
 

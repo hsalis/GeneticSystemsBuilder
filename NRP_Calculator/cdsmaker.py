@@ -1,4 +1,9 @@
-import nrpcalc
+try:
+    from . import nrpcalc
+except ImportError:
+    if __package__:
+        raise
+    import nrpcalc
 
 iupac_space = {
     'A': {'A'},
