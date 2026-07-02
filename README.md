@@ -68,6 +68,12 @@ From this source checkout:
 python3 -m pip install .
 ```
 
+After the package is published on PyPI:
+
+```bash
+python3 -m pip install gsb-dna
+```
+
 After installation, the package provides a command-line executable:
 
 ```bash

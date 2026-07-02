@@ -3,14 +3,30 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "genetic-systems-builder"
-version = "1.0.0"
-description = "Golden Gate genetic systems builder and non-repetitive parts design tools."
+name = "gsb-dna"
+version = "1.0.1"
+description = "Genetic Systems Builder algorithm for low-cost, high-throughput DNA assembly"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { file = "LICENSE" }
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
 authors = [
-  { name = "Howard Salis" }
+  { name = "Howard Salis", email = "howard.salis@ucr.edu" }
+]
+keywords = ["synthetic biology", "dna assembly", "oligopool", "PCR", "golden gate"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Science/Research",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 dependencies = [
   "biopython",
@@ -29,6 +45,11 @@ dependencies = [
 
 [project.scripts]
 gsb = "GeneticSystemsCalculator_Build:main"
+
+[project.urls]
+Homepage = "https://github.com/hsalis/GeneticSystemsBuilder"
+Source = "https://github.com/hsalis/GeneticSystemsBuilder"
+Preprint = "https://doi.org/10.64898/2026.06.08.729977"
 
 [tool.setuptools]
 py-modules = [
