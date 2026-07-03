@@ -77,6 +77,12 @@ try:
 except:
     current_directory = os.getcwd()
 
+def ensure_output_parent_directories(*filenames):
+    for filename in filenames:
+        directory = os.path.dirname(os.path.abspath(filename))
+        if directory and not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)
+
 class ScreeningRequestThread(threading.Thread):
     def __init__(self, base_url, data):
         threading.Thread.__init__(self)
@@ -1823,6 +1829,7 @@ class GoldenGatePool(object):
     def export(self, oligoPoolSpecification, excelFilename, oligoExcelFilename, primerPlateMapExcelFilename):
 
         print('*** EXPORT BEGINNING ***')
+        ensure_output_parent_directories(excelFilename, oligoExcelFilename, primerPlateMapExcelFilename)
 
         inputData = []
         inputDataHeaders = ['name', 'well_number', 'assembly_id', 'enzyme', 'is_circular', 'nucleotide_sequence', 'sequence_length']

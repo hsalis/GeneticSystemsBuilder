@@ -1,7 +1,7 @@
 {
   "name": "genetic-systems-builder",
   "version": "1.0.1",
-  "description": "Codex guidance for using Genetic Systems Builder to design Golden Gate oligo pools.",
+  "description": "Codex guidance for using the Genetic Systems Builder for high-throughput DNA assembly.",
   "author": {
     "name": "Howard Salis",
     "email": "howard.salis@ucr.edu",
@@ -20,7 +20,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Genetic Systems Builder",
-    "shortDescription": "Design Golden Gate oligo pools and primer plates with GSB.",
+    "shortDescription": "Use the Genetic Systems Builder for high-throughput DNA assembly.",
     "longDescription": "Adds Codex guidance for running Genetic Systems Builder from source checkouts or installed packages, preparing sequence inputs, choosing Golden Gate assembly options, interpreting outputs, and troubleshooting common build failures.",
     "developerName": "Salis Lab",
     "category": "Science",
@@ -29,10 +29,11 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Help me run GSB on my sequence file.",
-      "Check my GSB input schema.",
-      "Troubleshoot a Golden Gate build."
+      "Help me run GSB on my list of DNA sequences (CSV, Excel, Fasta, or Genbank formats)",
+      "Explain the GSB options and DNA assembly parameters",
+      "Explain the GSB output files and help me order DNA materials"
     ],
+    "websiteURL": "https://salislab.net",
     "brandColor": "#047857"
   }
 }
