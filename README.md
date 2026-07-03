@@ -131,6 +131,60 @@ Then verify GSB:
 gsb --help
 ```
 
+## AI Assistant Integrations
+
+This repository includes AI-agent instructions for using GSB. The same guidance is available in two forms:
+
+- `SKILLS.md`: a plain repository-level usage guide.
+- `plugins/genetic-systems-builder/`: a Codex plugin containing a `SKILL.md` file and plugin manifest.
+
+### Add GSB as a Claude Code Skill
+
+For Claude Code installations that support Skills, install the GSB skill by copying the bundled `SKILL.md` into a Claude Code skills directory.
+
+Project-scoped install, useful when you want the skill to travel with another project:
+
+```bash
+mkdir -p .claude/skills/genetic-systems-builder
+cp plugins/genetic-systems-builder/skills/genetic-systems-builder/SKILL.md \
+  .claude/skills/genetic-systems-builder/SKILL.md
+```
+
+User-scoped install, useful when you want Claude Code to use GSB guidance across projects:
+
+```bash
+mkdir -p ~/.claude/skills/genetic-systems-builder
+cp plugins/genetic-systems-builder/skills/genetic-systems-builder/SKILL.md \
+  ~/.claude/skills/genetic-systems-builder/SKILL.md
+```
+
+After installing the skill, start a new Claude Code session so the skill index can be refreshed.
+
+### Add GSB as a Codex Plugin
+
+This repository includes a repo-local Codex marketplace at:
+
+```text
+.agents/plugins/marketplace.json
+```
+
+From a source checkout, add the marketplace and install the plugin:
+
+```bash
+codex plugin marketplace add "$PWD/.agents/plugins"
+codex plugin add genetic-systems-builder@genetic-systems-builder
+```
+
+The marketplace entry points Codex to:
+
+```text
+plugins/genetic-systems-builder
+```
+
+The plugin includes the manifest at `plugins/genetic-systems-builder/.codex-plugin/plugin.json` and the skill at `plugins/genetic-systems-builder/skills/genetic-systems-builder/SKILL.md`.
+
+After adding or updating the plugin, start a new Codex thread so the plugin skill is loaded into the session.
+
 ## Input Files
 
 GSB accepts CSV, Excel, FASTA, GenBank, and JSON inputs. For CSV and Excel files, column names are normalized to lowercase.

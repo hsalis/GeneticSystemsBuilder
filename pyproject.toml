@@ -64,9 +64,17 @@ py-modules = [
 include = [
   "NRP_Calculator",
   "NRP_Calculator.*",
-  "data"
+  "data",
+  "plugins"
 ]
 
 [tool.setuptools.package-data]
 "NRP_Calculator.base" = ["*.par"]
 "data" = ["*.csv", "*.csv.zip", "*.xlsx"]
+"plugins" = [
+  "genetic-systems-builder/.codex-plugin/*.json",
+  "genetic-systems-builder/skills/*/SKILL.md"
+]
+
+[tool.setuptools.data-files]
+".agents/plugins" = [".agents/plugins/marketplace.json"]

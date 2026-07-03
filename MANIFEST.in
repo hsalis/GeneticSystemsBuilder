@@ -3,3 +3,5 @@ include LICENSE
 recursive-include data *.csv *.csv.zip *.xlsx
 recursive-include NRP_Calculator/base *.par
 recursive-include examples *.csv *.xlsx
+recursive-include plugins *
+include .agents/plugins/marketplace.json

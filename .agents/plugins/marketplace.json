@@ -1,0 +1,20 @@
+{
+  "name": "genetic-systems-builder",
+  "interface": {
+    "displayName": "Genetic Systems Builder"
+  },
+  "plugins": [
+    {
+      "name": "genetic-systems-builder",
+      "source": {
+        "source": "local",
+        "path": "./plugins/genetic-systems-builder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Science"
+    }
+  ]
+}
